@@ -19,11 +19,13 @@ class Dog
   end
   
   def self.print_all
-    dog_name= []
+    # iterates over all of the individual dogs stored in the @@all array
     @@all.each do |dog|
+      # puts out their name to the terminal.
+      puts @name << dog
       
     end
-    dog_name
+    # dog_name
   end
   
 end
