@@ -1,9 +1,10 @@
+
 class Dog 
+  
+  attr_accessor :name
   
   def initialize(name)
     @name = name
-    
-    
     @@all << self
   end 
   
@@ -15,17 +16,16 @@ class Dog
   
   
   def self.clear_all
-    @@all = []
+    @@all.clear
   end
   
   def self.print_all
+    
     # iterates over all of the individual dogs stored in the @@all array
-    @@all.each do |dog|
-      # puts out their name to the terminal.
-      puts @name << dog
-      
+    @@all.each do |dog, name|
+    puts dog.name
     end
-    # dog_name
   end
+ 
   
 end
