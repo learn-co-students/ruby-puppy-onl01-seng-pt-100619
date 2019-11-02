@@ -3,53 +3,28 @@
  
  class Dog 
   
-  attr_reader :name, :all, :print_all, :clear_all, :save  
-  
-  
-  @@ALL = [] 
-  
+
+  attr_accessor :name
+  @@all = []
+
   def initialize(name)
-    @name = name 
-    @@ALL << self
-    @save 
-  end 
-  
-  def save=(save)
-    @save = save 
-    @@ALL << self 
-  end 
-  
-  def all=(all)
-    @all = all 
-    @@ALL
-  end 
-  
-  def print_all=(print_all)
-    @print_all = print_all 
-    @@ALL.each do |dogs|
-      puts #{Dog.name}
-     end 
-  end 
-  
-  
-  def clear_all=(clear_all)
-    @clear_all = clear_all 
-    @@ALL.clear  
-  end 
-  
-  
-end 
+    @name = name
+    @@all << self
+    save
+  end
 
-Snoopy = Dog.new("Snoopy")
+  def self.all
+    @@all
+  end
+  def self.print_all
+    puts @@all.map{ |dog| dog.name }
+  end
+  def self.clear_all
+    @@all.clear
+  end
 
-Pluto = Dog.new("Pluto")
-
-Fido = Dog.new("Fido")
- 
-Maddie = Dog.new("Maddie")
-
-Dog.print_all
-
-
-
+  def save
+    @@all << self
+  end
+end
     
