@@ -25,7 +25,6 @@ class Dog
   end
   
   def self.print_all
-    Array
     @@all.each do |dog, name|
     puts dog.name
     end
